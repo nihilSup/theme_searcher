@@ -1,3 +1,5 @@
+import logging
+
 from sanic import Sanic, response
 from sanic.exceptions import abort
 
@@ -8,15 +10,15 @@ app = Sanic(__name__)
 
 @app.listener('before_server_start')
 async def init_searcher(app, loop):
-    """Builds searcher indexes when app started"""
-    # Searcher is built here to ensure lazy load when app starts,
-    # not during module import
+    # Searcher is built here to ensure fast module import
+    logging.info('Building search indexes')
     searcher = Searcher({
         'новости': ['деревья на Садовом кольце', 'добрый автобус',
                     'выставка IT-технологий'],
         'кухня': ['рецепт борща', 'яблочный пирог', 'тайская кухня'],
         'товары': ['Дети капитана Гранта', 'зимние шины', 'Тайская кухня'],
     })
+    logging.info('Finished')
 
     # I can implement searcher asynchronously but decided to separate 
     # implementation details and business rules. So I need async wrapper
