@@ -33,7 +33,7 @@ class Searcher(object):
                 phrases |= new_phrases
         tags = set()
         for phrase in phrases:
-            # can be optimized if i build counter while constructing indexes or
+            # can be optimized if I build counter while constructing indexes or
             # cached
             ph_c = Counter(phrase.split())
             if self._contains(text_counter, ph_c):
