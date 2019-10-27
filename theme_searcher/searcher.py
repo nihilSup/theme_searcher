@@ -1,6 +1,5 @@
-from collections import defaultdict, Counter
 import string
-
+from collections import Counter, defaultdict
 
 tags_phrases = {
     'новости': ['деревья на Садовом кольце', 'добрый автобус', 'выставка IT-технологий'],
@@ -17,7 +16,6 @@ class Searcher(object):
         for tag, phrases in tags_phrases.items():
             for phrase in phrases:
                 # Proper way is to do lemmatization by nltk and spacy
-                # TODO: add phrase cleaning
                 phrase = self._clear(phrase)
                 tags_index[phrase].add(tag)
                 for word in phrase.split():

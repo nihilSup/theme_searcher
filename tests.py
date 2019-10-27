@@ -2,6 +2,7 @@ import unittest
 
 from theme_searcher.searcher import Searcher
 
+
 class TestSearcherIndexes(unittest.TestCase):
     def test_index_building(self):
         tags_phrases = {

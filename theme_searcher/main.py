@@ -1,7 +1,8 @@
-import logging
 import argparse
+import logging
 
 from .web import app
+
 
 def main():
     args = parse_args()

@@ -1,5 +1,4 @@
-from sanic import Sanic
-from sanic import response
+from sanic import Sanic, response
 from sanic.exceptions import abort
 
 app = Sanic(__name__)
