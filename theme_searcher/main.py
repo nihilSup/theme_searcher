@@ -11,7 +11,7 @@ def main():
                         datefmt='%Y.%m.%d %H:%M:%S')
     logging.info("started with args {}".format(args))
 
-    app.run(host="0.0.0.0", port=8000)
+    app.run(host=args.host, port=args.port)
 
 
 def parse_args():
