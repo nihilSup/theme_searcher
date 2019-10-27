@@ -11,3 +11,7 @@ env/
 venv/
 ._*
 .mypy_cache
+.eggs
+*.egg-info
+*.egg
+build
