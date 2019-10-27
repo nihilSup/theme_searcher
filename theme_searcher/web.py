@@ -21,7 +21,8 @@ async def init_searcher(app, loop):
     logging.info('Finished')
 
     # I can implement searcher asynchronously but decided to separate 
-    # implementation details and business rules. So I need async wrapper
+    # implementation details and business rules. So I need async wrapper.
+    # Also i could use asyncio.create_task method
     async def search(text):
         return searcher(text)
 
@@ -35,5 +36,6 @@ async def test(request):
     except KeyError:
         abort(400)
     else:
+        # assumes search is fast, otherwise need to run it in process executor
         res = await app.search(text[0])
         return response.json(res)

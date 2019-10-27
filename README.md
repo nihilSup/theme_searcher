@@ -31,3 +31,7 @@ or
 ```shell
 python3 setup.py test
 ```
+
+## Usefull links
+
+- <https://webdevblog.ru/podhody-lemmatizacii-s-primerami-v-python/>
