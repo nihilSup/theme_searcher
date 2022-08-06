@@ -13,6 +13,6 @@ setup(
    author_email='igor.s.stulikov@gmail.com',
    url="",
    packages=['theme_searcher'],
-   install_requires=['sanic==19.9.0'],
+   install_requires=['sanic==20.12.7'],
    test_suite="tests"
 )
